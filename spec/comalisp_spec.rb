@@ -1,7 +1,58 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe "Comalisp" do
-  it "fails" do
-    fail "hey buddy, you should probably rename this file and start specing for real"
+  context "list:" do
+    it "is a cons" do
+      (ComaLisp {
+         (consp (list 1, 2))
+       }).should be_true
+    end
+
+    specify "car is 1" do
+      (ComaLisp {
+         (car (list 1, 2))
+       }).should == 1
+    end
+
+    it "cadr element is 2" do
+      (ComaLisp {
+         (car (cdr (list 1, 2)))
+       }).should == 2
+    end
   end
+
+  context "cons:" do
+    it "builds a cons" do
+      (ComaLisp {
+         (consp (cons 1, null))
+       }).should == true
+    end
+
+    it "takes the car" do
+      (ComaLisp {
+         (car (cons 1, null))
+       }).should == 1
+    end
+
+    it "the cdr of a one element list is null" do
+      (ComaLisp {
+         (nullp (cdr (cons 1, null)))
+       }).should be_true
+    end
+
+    specify "the cdr of null is null" do
+      (ComaLisp {
+         (nullp (cdr null))
+       }).should be_true
+    end
+
+    specify "car of null is null" do
+      (ComaLisp {
+         (nullp (car null))
+       }).should be_true
+    end
+  end
+  
 end
+
+
