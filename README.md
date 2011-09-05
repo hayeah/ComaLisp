@@ -8,4 +8,4 @@
           (p (list a, b, (foo 3, 4, 5)))})})
 
 
-This is *VALID* Ruby syntax under 1.9. I kid you not.
+This is _VALID_ Ruby syntax under 1.9. I kid you not.
