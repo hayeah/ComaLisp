@@ -69,7 +69,15 @@ describe "Comalisp" do
              })})}).should == [3,2]
     end
   end
-  
+
+  context "defun:" do
+    specify "define local function" do
+      (ComaLisp {
+         (defun [:foo,:a,:b] {
+            [a,b]})
+         [(foo 1, 2),(foo 3, 4)]}).should == [[1,2],[3,4]]
+    end
+  end
 end
 
 
