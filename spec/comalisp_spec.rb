@@ -52,6 +52,23 @@ describe "Comalisp" do
        }).should be_true
     end
   end
+
+  context "let:" do
+    specify "variable binding" do
+      (ComaLisp {
+         (let [:a,1], [:b,2] {
+           [a,b]
+         })}).should == [1,2]
+    end
+
+    specify "variable shadow" do
+      (ComaLisp {
+         (let [:a,1], [:b,2] {
+            (let [:a,3] {
+               [a,b]
+             })})}).should == [3,2]
+    end
+  end
   
 end
 
