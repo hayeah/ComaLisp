@@ -15,10 +15,10 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "comalisp"
-  gem.homepage = "http://github.com/hayeah/comalisp"
+  gem.homepage = "https://github.com/hayeah/ComaLisp"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "A dialect of Lisp. Fully Compatible with Ruby."
+  gem.description = "A dialect of Lisp. Fully Compatible with Ruby."
   gem.email = "hayeah@gmail.com"
   gem.authors = ["Howard Yeh"]
   # dependencies defined in Gemfile
