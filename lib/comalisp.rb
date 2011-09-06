@@ -1,8 +1,5 @@
 
 class ComaLisp
-  class Cons < Struct.new(:head,:tail)
-  end
-  
   def initialize(opts={})
     # parent is used for scoping
     @parent = opts[:parent]
