@@ -1,4 +1,3 @@
-
 class ComaLisp
   def initialize(opts={})
     # parent is used for scoping

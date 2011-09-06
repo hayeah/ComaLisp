@@ -88,6 +88,12 @@ describe "Comalisp" do
          [(foo 1, 2),(foo 3, 4)]}).should == [[1,2],[3,4]]
     end
   end
+
+  context "method prefixing:" do
+    it "calls the method on the first argument" do
+      (ComaLisp {
+         (map [-1,-2,-3] { |e|
+            (abs e)})}).should == [1,2,3]
+    end
+  end
 end
-
-
