@@ -89,6 +89,23 @@ describe "Comalisp" do
     end
   end
 
+  context "function application" do
+    it "calls a function with args" do
+      (ComaLisp {
+         (defun [:foo,:a,:b] {
+            (list a, b)})
+         (call :foo, 1, 2)}).should == [1,2]  
+    end
+
+    it "applies a function with args" do
+      (ComaLisp {
+         (defun [:foo,:a,:b] {
+            (list a, b)})
+         (apply :foo, [1,2])}).should == [1,2]
+    end
+    
+  end
+
   context "method prefixing:" do
     it "calls the method on the first argument" do
       (ComaLisp {

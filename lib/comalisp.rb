@@ -43,11 +43,11 @@ class ComaLisp
   end
 
   def call(fn,*args)
-    self.instance_exec(*args,&fn)
+    self.apply(fn,args)
   end
 
   def apply(fn,args)
-    self.instance_exec(*args,&fn)
+    self.send(fn,*args)
   end
 
   def let(*vars,&body)
