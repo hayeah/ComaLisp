@@ -70,6 +70,16 @@ describe "Comalisp" do
     end
   end
 
+  context "set:" do
+    it "sets a binding" do
+      (ComaLisp {
+         (let [:a,1] {
+            (set :a, 2)
+            a
+          })}).should == 2
+    end
+  end
+
   context "defun:" do
     specify "define local function" do
       (ComaLisp {
